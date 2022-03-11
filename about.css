@@ -1,0 +1,120 @@
+/*
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    --clr-main: #1B9CFC;
+    --clr-text: #FFFFFF;
+
+    --ff-display: 'Space Mono', sans-serif;
+
+    --fs-400: 2rem;
+}
+
+#cursor {
+    left: -50px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--clr-main);
+    transition: 00ms;
+    z-index: 10;
+}
+
+.cursor-hover {
+    animation: scale 400ms ease-in-out forwards;
+}
+
+.cursor-leave {
+    animation: scale-down 400ms ease-in-out forwards;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.75);
+    }
+}
+
+@keyframes scale-down {
+    0% {
+        transform: scale(1.75);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.nav-button {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    right: 0;
+    top: 0;
+    width: clamp(5rem, 15vmin, 20rem);
+    aspect-ratio: 2/1;
+    padding: 1em;
+    z-index: 10;
+    cursor: default;
+}
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    z-index: -1;
+}
+
+.circle {
+    width: 40vmin;
+    aspect-ratio: 1;
+    border: 3px solid var(--clr-main);
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem var(--clr-main),
+    0 0 0.8rem var(--clr-main),
+    0 0 2.8rem var(--clr-main),
+    inset 0 0 1.3rem var(--clr-main);
+    animation: pulsate 5s ease-in-out infinite;
+}
+
+@keyframes pulsate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+.ff-display {
+    font-family: var(--ff-display);
+}
+
+.fs-400 {
+    font-size: var(--fs-400);
+}
+
+.text-white {
+    color: var(--clr-text);
+}
+
+.title-container {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+.title {
+    font-size: clamp(1rem, 8vmin ,10rem);
+}
+*/
+
+
+
+
