@@ -35,14 +35,18 @@
         <p class="text-white ff-display justify-text para">...whatever you need, I'm here for you. So don't think twice and shoot me a message.</p>
         <div class="space1"></div>
         <div class="space1"></div>
-        <input type="text" class="field ff-display cursor-over" placeholder="Name">
-        <div class="space1"></div>
-        <input type="email" class="field ff-display cursor-over" placeholder="Email">
-        <div class="space1"></div>
-        <textarea class="big-field ff-display cursor-over" placeholder="Message"></textarea>
-        <div class="space1"></div> 
-        <button id="submit-button" class="ff-display cursor-over">Submit</button>
+        <form action="https://formsubmit.co/el/zocigu" method="POST">
+            <input type="text" class="field ff-display cursor-over" name="name" placeholder="Name">
+            <div class="space1"></div>
+            <input type="email" class="field ff-display cursor-over" name="email" placeholder="Email">
+            <div class="space1"></div>
+            <textarea class="big-field ff-display cursor-over" name="message" placeholder="Message"></textarea>
+            <div class="space1"></div> 
+            <button id="submit-button" type="submit" class="ff-display cursor-over">Submit</button>
+       </form>
+       <div class="space4"></div>
     </div>
+    <div class="bottom-line"></div>
 
     <script src="cursor.js"></script>
 </body>

@@ -81,7 +81,7 @@ whiteDotRight.addEventListener('click', ()=> {
           break;
         case 5:
           revolveTitle.innerText = 'Sports';
-          revolveText.innerText = 'Been working out all my life, still not fit.'
+          revolveText.innerText = 'Still need to think a good line for this one.'
           break;
         default:
           break;
@@ -120,7 +120,7 @@ whiteDotLeft.addEventListener('click', ()=> {
           break;
         case 5:
           revolveTitle.innerText = 'Sports';
-          revolveText.innerText = 'Been working out all my life, still not fit.'
+          revolveText.innerText = 'Still need to think a good line for this one.'
           break;
         default:
           break;
