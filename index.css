@@ -216,13 +216,14 @@ select {
 #cursor {
     left: -50px;
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 1px solid var(--clr-main);
     transition: 150ms ease-out;
     pointer-events: none;
     z-index: 150;
+    backdrop-filter: blur(1px);
 }
 
 .cursor-hover {
@@ -402,26 +403,31 @@ body {
     z-index: -1;
 }
 
-.circle {
+/*.circle {
     width: 40vmin;
     aspect-ratio: 1;
     border: 3px solid var(--clr-main);
+    border-radius: 50%;
     box-shadow: 0 0 .2rem #fff,
     0 0 .2rem #fff,
     0 0 2rem var(--clr-main),
     0 0 0.8rem var(--clr-main),
     0 0 2.8rem var(--clr-main),
     inset 0 0 1.3rem var(--clr-main);
-    animation: pulsate 6s ease-in-out infinite;
+    animation: pulsate 10s ease-in-out infinite;
 }
-
+*/
 @keyframes pulsate {
     0% {
-        transform: rotate(0);
+        transform: scale(0);
     }
-    100% {
-        transform: rotate(90deg);
+    50% {
+        transform: scale(1);
     }
+    100%{
+        transform: scale(0);
+    }
+    
 }
 
 .title-container {
@@ -432,7 +438,52 @@ body {
     position: absolute;
 }
 
+
 .title {
-    z-index: 75;
     font-size: clamp(1rem, 8vmin ,10rem);
+    z-index: 75;
 }
+
+.buttons {
+    width: 100%;
+    height: clamp(2rem, 5vmin, 3rem);
+    padding: .5em 0;
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 10vmin, 6rem);
+}
+
+.buttons > a {
+    text-decoration: none;
+    transition: 300ms ease-in-out;
+    width: 50%;
+}
+
+.buttons > a > div {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 75;
+    font-size: clamp(.5rem, 3vmin, 1rem);
+    
+}
+
+.CV-button {
+    border: 1px solid white;
+}
+
+.contact-button {
+    border: 1px solid var(--clr-main);
+}
+
+.contact-button:hover {
+    background-color: var(--clr-main);
+}
+
+.CV-button:hover {
+    background-color: white;
+    color: var(--clr-bg);
+}
+
+

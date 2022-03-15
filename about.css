@@ -136,7 +136,7 @@
 }
 
 .social-link > img {
-    width: clamp(2rem, 10vmin, 4rem);
+    width: clamp(2rem, 10vmin, 3.5rem);
 }
 
 .socials {

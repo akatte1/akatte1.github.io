@@ -6,7 +6,7 @@ const cursor = document.getElementById('cursor');
 var cursorOver = document.getElementsByClassName('cursor-over'); 
 
 window.addEventListener('mousemove', e=> {
-    cursor.setAttribute("style", "top:"+(e.pageY-15)+"px; left:"+(e.pageX-15)+"px;");
+    cursor.setAttribute("style", "top:"+(e.pageY-20)+"px; left:"+(e.pageX-20)+"px;");
 })
 
 for (i=0; i<cursorOver.length; i++) {
@@ -81,7 +81,7 @@ whiteDotRight.addEventListener('click', ()=> {
           break;
         case 5:
           revolveTitle.innerText = 'Sports';
-          revolveText.innerText = 'Still need to think a good line for this one.'
+          revolveText.innerText = 'Been working out all my life, still not fit.'
           break;
         default:
           break;
@@ -120,7 +120,7 @@ whiteDotLeft.addEventListener('click', ()=> {
           break;
         case 5:
           revolveTitle.innerText = 'Sports';
-          revolveText.innerText = 'Still need to think a good line for this one.'
+          revolveText.innerText = 'Been working out all my life, still not fit.'
           break;
         default:
           break;
@@ -135,8 +135,4 @@ revolveClick.addEventListener('click', ()=> {
         aboutTexts[i].classList.toggle('scale-out');
     }
 })
-
-
-
-
 
