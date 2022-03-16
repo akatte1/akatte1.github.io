@@ -154,6 +154,9 @@ select {
     background-color: white;
 }
 
+::selection {
+  background-color: var(--clr-main);
+}
 
 /*--------------------------*/
 /*Components                */
