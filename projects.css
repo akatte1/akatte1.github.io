@@ -20,7 +20,6 @@
     height: 15rem;
     width: 100%;
     background-color: white;
-    border-radius: 15px;
     display: grid;
     place-items: center;
     transition-duration: 200ms;
