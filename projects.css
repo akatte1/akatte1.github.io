@@ -1,0 +1,28 @@
+.project-grid {
+    width: 100%;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    justify-items: center;
+}
+
+.card {
+    height: 15rem;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+}
+
+.card > a {
+    text-decoration: none;
+}
+
+.minesweeper {
+    background-image: url(assets/mine.jpg);
+    background-position: center;
+    background-size: 200%;
+    position: relative;
+}
+
