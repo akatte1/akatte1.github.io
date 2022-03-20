@@ -146,14 +146,6 @@ select {
     font-weight: 800;
 }
 
-.bottom-line {
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-    height: .5rem;
-    background-color: white;
-}
-
 ::selection {
   background-color: var(--clr-main);
 }

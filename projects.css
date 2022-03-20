@@ -1,7 +1,17 @@
+:root {
+    --clr-main: #1B9CFC;
+    --clr-text: #FFFFFF;
+    --clr-bg: #181818;
+
+    --ff-display: 'Space Mono', sans-serif;
+
+    --fs-400: 2rem;
+}
+
 .project-grid {
     width: 100%;
     display: grid;
-    gap: 1.5rem;
+    gap: 3rem;
     grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
     justify-items: center;
 }
@@ -13,9 +23,17 @@
     border-radius: 15px;
     display: grid;
     place-items: center;
+    transition-duration: 200ms;
+    position: relative;
 }
 
-.card > a {
+
+.card:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+a {
     text-decoration: none;
 }
 
@@ -26,3 +44,9 @@
     position: relative;
 }
 
+.design {
+    background-image: url(assets/design.jpg);
+    background-position: center;
+    background-size: 150%;
+    position: relative;
+}
