@@ -1,0 +1,112 @@
+/*useful*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*properties*/
+
+:root {
+    --clr-main: #1B9CFC;
+    --clr-text: #FFFFFF;
+    --clr-bg: #181818;
+
+    --ff-display: 'Space Mono', sans-serif;
+}
+
+
+/*other*/
+
+body {
+    display: grid;
+    place-items: center;
+    background-color: var(--clr-bg);
+    color: var(--clr-text);
+    font-family: var(--ff-display);
+}
+
+.container {
+    max-width: 90vw;
+    width: fit-content;
+}
+
+@media (min-width:1200px) {
+    .container {
+        display: flex;
+        gap: 4rem;
+    }
+}
+
+.dealer-hand,
+.player-hand  {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+}
+
+.card-front {
+    width: clamp(8rem, 20vw, 12rem);
+    border: 1px solid var(--clr-main);
+    font-size: 1.5em;
+    padding: .2em;
+} 
+
+.card-front-small {
+    width: clamp(2rem, 5vw, 4rem);
+    min-width: fit-content;
+    height: clamp(14rem, 20vw, 16rem);
+    border: 1px solid var(--clr-main);
+    font-size: 1.5em;
+    padding: .2em;
+} 
+
+.card-back {
+    width: clamp(8rem, 20vw, 12rem);
+    background-color: var(--clr-main);
+    border: 1px solid var(--clr-main);
+    font-size: 1.5em;
+    padding: .2em;
+}
+
+.buttons {
+    display: flex;
+    max-width: 50rem;
+    width: 90vw;
+    height: 3rem;
+    bottom: 2rem;
+    gap: 2rem;
+}
+
+.end-message {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+
+.end-message > a {
+    color: var(--clr-text);
+    text-decoration: none;
+}
+#hit,
+#stand {
+    width: 50%;
+    height: 100%;
+    color: white;
+    background: none;
+    border: 1px solid var(--clr-main);
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+#hit:hover,
+#stand:hover {
+    background: var(--clr-main);
+}
+
+
+

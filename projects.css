@@ -49,3 +49,10 @@ a {
     background-size: 150%;
     position: relative;
 }
+
+.blackjack {
+    background-image: url(assets/blackjack.jpg);
+    background-position: center;
+    background-size: 120%;
+    position: relative;
+}
