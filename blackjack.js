@@ -44,6 +44,8 @@ for (var i =0; i<4; i++) {
 Simple game logic
 */
 
+var gameState = true;
+
 var hand = [];
 var dealerHand = [];
 var dealerHandIndex = 0;
@@ -84,7 +86,7 @@ Functions
 */
 
 function hit() {
-    if (calcHandSum() >= 21) {
+    if (!(gameState)) {
         pass;
     }
     var r = Math.floor(Math.random()*52);
@@ -180,7 +182,7 @@ function calcDealerHandSum() {
 
 
 function stand() {
-    if (calcHandSum() >= 21) {
+    if (!(gameState)) {
         pass;
     }
     while (calcDealerHandSum()<=17) {
@@ -192,6 +194,8 @@ function stand() {
 }
 
 function gameEnd() {
+    gameState = false;
+
     var player = calcHandSum();
     var dealer = calcDealerHandSum();
 
