@@ -56,3 +56,13 @@ a {
     background-size: 120%;
     position: relative;
 }
+
+
+.spotify-guesser {
+    background-image: url(assets/spotify.jpg);
+    background-position: center;
+    background-size: 120%;
+    position: relative;
+}
+
+
