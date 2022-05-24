@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap');
 /* Box sizing rules */
 *,
 *::before,
@@ -70,7 +71,7 @@ select {
 }
 
 body {
-    background-image: url(/assets/bg.png);
+    background-image: url(/images/bg.png);
     display: flex;
     justify-content: center;
     font-family: 'Space Mono', sans-serif;
