@@ -172,7 +172,7 @@ function SJF(arr) {
 }
 
 function createGraph(obj) {
-    arr = obj.output
+    arr = modifyArray(obj.output)
     wait = obj.wait
     const processes = document.getElementById("process")
     processes.innerHTML = ""
@@ -188,6 +188,18 @@ function createGraph(obj) {
     const waitTime = document.createElement("h4")
     waitTime.innerText = "Keskmine ooteaeg " +  wait.toFixed(2)
     document.getElementById("wait").appendChild(waitTime)
+}
+
+function modifyArray(arr) {
+    var output = []
+    for (i=0;i<arr.length;i++) {
+        console.log(arr[i][1])
+        for(q=0;q<arr[i][1];q++) {
+            output.push([arr[i][0], 1])
+        }
+    }
+    console.log(output)
+    return output
 }
 
 function uiFunctionality() {
