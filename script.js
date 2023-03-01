@@ -8,7 +8,7 @@ const questions = [
     "IMDb Top 100  #1 film",
     ["/images/roald.jpg", "(1979)"],
     "Selle spordiala terminite hulka kuuluvad “side out”, “monster block” ja “pokey”  (Siimu lemmik spordiala, mida harrastada)",
-    ["images/kodu.png", "Siimu sünnikodu tänav"],
+    ["images/siimpapsiga.jpeg", "Siimu sünnikodu tänav"],
     "Kunstniku kujutis iseendast",
     "Saar, kus asub Eesti vanim puithoone",
     "Seriaal, mis on olnud eetris alates 1993 kuni tänaseni",
