@@ -56,7 +56,7 @@ for (i=1;i<6;i++) {
             })
             document.body.appendChild(question)
         })
-        square.innerText = i*100
+        square.innerText = i*10
         layout.appendChild(square)
     }
 }
