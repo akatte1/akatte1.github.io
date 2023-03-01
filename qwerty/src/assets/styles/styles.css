@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500&display=swap');
+
+/*---------------------------------*/
+/*Reset
+/*---------------------------------*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*---------------------------------*/
+/*Custom properties
+/*---------------------------------*/
+
+:root {
+    --bg-color: #1e272e;
+    --text-light: white;
+    --fg-aqua: #34e7e4;
+    --fg-yellow: #ffd32a;
+    --fg-pink: #f53b57;
+    --fg-green: #0be881;
+    --fg-blue: #0fbcf9;
+
+    --text-big: clamp(1.5rem, 10vmin, 5rem);
+    --text-medium: clamp(1rem, 5vmin, 3rem);
+    --text-small: clamp(.75rem, 2.5vmin, 2rem);
+
+    --ff-main: "unbounded";
+
+
+}
+
+/*---------------------------------*/
+/*Utility classes
+/*---------------------------------*/
+
+.color-bg {
+  color: var(--bg-color);
+}
+
+.color-yellow {
+  color: var(--fg-yellow);
+}
+
+.color-pink {
+  color: var(--fg-pink);
+} 
+
+.color-aqua {
+  color: var(--fg-aqua);
+}
+
+.color-blue {
+  color: var(--fg-blue);
+}
+
+.color-green {
+  color: var(--fg-green);
+}
+
+.bg-pink {
+  background-color: var(--fg-pink);
+}
+
+.bg-blue {
+  background-color: var(--fg-blue);
+}
+
+.bg-aqua {
+  background-color: var(--fg-aqua);
+}
+
+.bg-yellow {
+  background-color: var(--fg-yellow);
+}
+
+.bg-green {
+  background-color: var(--fg-green);
+}
+
+.text-big {
+  font-size: var(--text-big);
+}
+
+.text-medium {
+  font-size: var(--text-medium);
+}
+
+.text-small {
+  font-size: var(--text-small);
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-center {
+  display: grid;
+  place-items: center;
+}
+
+.flex {
+  display: flex;
+}

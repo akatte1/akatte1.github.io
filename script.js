@@ -1,252 +1,70 @@
-class Queue {
-    constructor() {
-      this.elements = {};
-      this.head = 0;
-      this.tail = 0;
-    }
-    enqueue(element) {
-      this.elements[this.tail] = element;
-      this.tail++;
-    }
-    dequeue() {
-      const item = this.elements[this.head];
-      delete this.elements[this.head];
-      this.head++;
-      return item;
-    }
-    peek() {
-      return this.elements[this.head];
-    }
-    get length() {
-      return this.tail - this.head;
-    }
-    get isEmpty() {
-      return this.length === 0;
-    }
-}
+const questions = [
+    "",
+    ["/images/maguire.png", "(1993)"],
+    "Johannes Thingnes Bø on selle spordiala valitseja (Siimu lemmik spordiala, mida vaadata)",
+    "Eesti läänepoolseim linn",
+    "Üks õige veoauto värv",
+    "Tai suurim saar",
+    "IMDb Top 100  #1 film",
+    ["/images/roald.jpg", "(1979)"],
+    "Selle spordiala terminite hulka kuuluvad “side out”, “monster block” ja “pokey”  (Siimu lemmik spordiala, mida harrastada)",
+    ["images/kodu.png", "Siimu sünnikodu tänav"],
+    "Kunstniku kujutis iseendast",
+    "Saar, kus asub Eesti vanim puithoone",
+    "Seriaal, mis on olnud eetris alates 1993 kuni tänaseni",
+    ["images/mendes.jpg", "(1974)"],
+    "2007nda aasta F1 maailmameister (Siimu lemmik vormelisõitja)",
+    ["images/siim.png", "Pilt on tehtud selles riigis"],
+    "Firma, mis toodab nii veo- kui sõiduautosid ja ka meremootoreid",
+    "Saar, kus 2017 toimusid Saarte mängud",
+    "Kolmeliikmeline komöödiarühmitus, mis alustas tegutsemist 90ndatel raadios",
+    ["images/saras.jpg", "(1976)"],
+    ["images/kilim.png", "Maailma kõrgeim eraldiseisev mägi (Kõrgeim tipp, mille otsa Siim on roninud)"],
+    ["images/vollelaager.png", "vollelaagri riik, kuhu suundutakse ka sel kevadel"],
+    "Nii mitu ratast on enimlevinud poolhaakel",
+    "Freddie Mercury sünnisaar",
+    "1969. aastal valminud film, mille süžee põhineb Eduard Bornhöhe romaanil (Siimu lemmik Eesti film)",
+    ["images/fred.png", "(1993)"],
+    ["images/rannavolle.png", "Rantanen - Talistu duo parim koht Rannavolle suvetuuri etappidel"],
+    "Riik, kus Siim käis arvutimängu Dreamhac võistlustel",
+    "Seade, mida kasutatakse steriliseerimiseks meditsiinivaldkonnas",
+    "Saar, kus sündisid kaksikutest kirjanikud Ülo ja Jüri Tuulik",
+    "2001 valminud dokumentaalne teleuurimus ellujääjatest kohalikes Eesti oludes (Siimu juhendatav fantasy meeskond)"
+]
 
-function toArray(inputString) {
-    output = []
-    output = inputString.split(";")
-    for (i=0;i<output.length;i++) {
-        output[i] = output[i].split(",")
-        output[i][0] = Number(output[i][0])
-        output[i][1] = Number(output[i][1])
-    }
-    return output
-}
-
-function FCFS(arr) {
-    wait = 0
-    currentTime = 0
-    output=[]
-    for (i=0;i<arr.length;i++) {
-        startTime = arr[i][0]
-        processTime = arr[i][1]
-        if (startTime>currentTime) {
-            output.push(['wait', startTime-currentTime])
-            currentTime = startTime
-        } else if (startTime<currentTime) {
-            wait += currentTime - startTime
-        }
-        output.push(["p" + Number(i+1), processTime])
-        currentTime += processTime
-    }
-    return {
-        "output": output,
-        "wait": wait/arr.length
-    }
-}
-
-function RR(arr) {
-    var currentTime = 0
-    var output = []
-    var timeQuant = 5
-    var q = new Queue()
-    var i = 0
-    var newProcess = true
-    var wait = 0
-    while (i<arr.length || q.length > 0) {
-        if (i < arr.length) {
-            startTime=arr[i][0]
-        } else {
-            startTime = Infinity
-        }
-        newProcess = startTime <= currentTime || q.length === 0
-        if (newProcess) {
-            processTime=arr[i][1]
-            if (startTime>currentTime) {
-                output.push(['wait', startTime-currentTime])
-                currentTime = startTime
-            } else if (startTime < currentTime) {
-                wait += currentTime - startTime
-            } 
-            if (processTime <= timeQuant) {
-                output.push(["p" + Number(i+1), processTime])
-                currentTime += processTime
-                i++
+const layout = document.getElementById("layout")
+for (i=1;i<6;i++) {
+    for (j=1; j<7; j++) {
+        const square = document.createElement("div")
+        square.classList.add("node")
+        square.id = j + ((i-1)*6)
+        square.addEventListener('click', ()=> {
+            square.innerText = ""
+            const question = document.createElement("div")
+            question.classList.add("question")
+            questionItem = questions[Number(square.id)]
+            if (typeof questionItem === "object") {
+                const image = document.createElement("img")
+                image.src = questionItem[0]
+                question.innerText = questionItem[1]
+                question.appendChild(image)
             } else {
-                currentTime += timeQuant
-                output.push(["p" + Number(i+1), timeQuant])
-                var que = [i, processTime-timeQuant]
-                q.enqueue(que)
-                i++
+                question.innerText = questionItem
             }
-        } else {
-            const process = q.dequeue()
-            processTime = process[1]
-            if (processTime <= timeQuant) {
-                output.push(["p" + Number(process[0]+1), processTime])
-                currentTime += processTime
-            } else {
-                currentTime += timeQuant
-                output.push(["p" + Number(process[0]+1), timeQuant])
-                var que = [process[0], processTime-timeQuant]
-                q.enqueue(que)
-            }
-        }
-        console.log(output)
-
-    } 
-
-    return {
-        "output": output,
-        "wait": wait/arr.length
+            question.addEventListener('click', ()=> {
+                question.style.display = "none"
+            })
+            document.body.appendChild(question)
+        })
+        square.innerText = i*100
+        layout.appendChild(square)
     }
 }
 
-function SJF(arr) {
-    var wait = 0
-    var currentTime = 0
-    var output = []
-    var done = []
-    var i = 0
-    var count = 0
-    while (count<arr.length) {
-        var startTime = arr[i][0]
-        var processTime = arr[i][1]
-        if (startTime>currentTime) {
-            output.push(['wait', startTime-currentTime])
-            currentTime = startTime
-            continue
-        } else {
-            if (startTime<currentTime) {
-                wait += currentTime - startTime
-            }
-            currentTime += processTime
-            output.push(["p" + Number(i+1), processTime])
-            done.push(i)
-        }
-        var candidates = []
-        for (q=0;q<arr.length;q++) {
-            var qStartTime = arr[q][0]
-            var qProcessTime = arr[q][1]
-            if (qStartTime<=currentTime) {
-                if (!done.includes(q) && q != i) {
-                    candidates.push([q, qProcessTime])
-                }
-            }   
-        }
-        if (candidates.length === 0) {
-            i=0
-            while (done.includes(i)) {
-                i++
-            } 
-        } else {
-            var min = 99999
-            var minIndex = -1
-            for (s=0;s<candidates.length;s++) {
-                if (candidates[s][1] < min) {
-                    min = candidates[s][1]
-                    minIndex = candidates[s][0]
-                }
-            }
-            i = minIndex
-        }
-        count++
-    } 
-    return {
-        "output": output,
-        "wait": wait/arr.length
-    } 
-}
+window.addEventListener("keypress", ()=> {
+    const question = document.createElement("div")
+    question.classList.add("question")
+    question.innerText = "Maailma esimene SMS saadeti 3. detsembril 1992. aastal. Selle sisu oli just see lause."
+    document.body.appendChild(question)
 
-function createGraph(obj) {
-    arr = modifyArray(obj.output)
-    wait = obj.wait
-    const processes = document.getElementById("process")
-    processes.innerHTML = ""
-    document.getElementById("wait").innerText = ""
-
-    for (i=0;i<arr.length;i++) {
-        const node = document.createElement("div")
-        node.innerText = arr[i][0]
-        node.style.width = (arr[i][1]*1.4) + "rem"
-        node.classList.add(arr[i][0], "node")
-        processes.appendChild(node)
-    }
-    const waitTime = document.createElement("h4")
-    waitTime.innerText = "Keskmine ooteaeg " +  wait.toFixed(2)
-    document.getElementById("wait").appendChild(waitTime)
-}
-
-function modifyArray(arr) {
-    var output = []
-    for (i=0;i<arr.length;i++) {
-        console.log(arr[i][1])
-        for(q=0;q<arr[i][1];q++) {
-            output.push([arr[i][0], 1])
-        }
-    }
-    console.log(output)
-    return output
-}
-
-function uiFunctionality() {
-    const fcfs = document.getElementById("fcfs")
-    const sjf = document.getElementById("sjf")
-    const rr = document.getElementById("rr")
-    const re = RegExp("([0-9]+,[0-9]+;?){2,}")
-    
-    fcfs.addEventListener("click", ()=>{
-        let value = document.querySelector('input[name="nimi"]:checked').value
-        if (value === "input") {
-            const input = document.getElementById("userInput")
-            value = input.value
-        }
-        if (re.test(value)) {
-            const values = FCFS(toArray(value))
-            createGraph(values)
-        } else {
-            alert("Sisend ei sobi!")
-        }
-    })
-    sjf.addEventListener("click", ()=>{
-        let value = document.querySelector('input[name="nimi"]:checked').value
-        if (value === "input") {
-            const input = document.getElementById("userInput")
-            value = input.value
-        }
-        if (re.test(value)) {
-            const values = SJF(toArray(value))
-            createGraph(values)
-        } else {
-            alert("Sisend ei sobi!")
-        }
-    })
-    rr.addEventListener("click", ()=>{
-        let value = document.querySelector('input[name="nimi"]:checked').value
-        if (value === "input") {
-            const input = document.getElementById("userInput")
-            value = input.value
-        }
-        if (re.test(value)) {
-            const values = RR(toArray(value))
-            createGraph(values)
-        } else {
-            alert("Sisend ei sobi!")
-        }
-    })
-}
-
-uiFunctionality()
+})

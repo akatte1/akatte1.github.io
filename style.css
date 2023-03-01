@@ -1,97 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+
 * {
-    font-family: "Lato", sans-serif;
     padding: 0;
     margin: 0;
+    font-family: "Ubuntu", sans-serif;
 }
 
-body {
+:root {
+    --color: #060CE9;
+}
+
+header {
+    height: calc(100vh/6);
+    width: 100%;
     display: flex;
-    align-items: center;
-    flex-direction: column;
 }
 
-.p0 {
-    background-color: aquamarine;
-}
-.p1 {
-    background-color: lightblue;
-}
-.p2 {
-    background-color: lightcoral;
-}
-.p3 {
-    background-color: greenyellow;
-}
-.p4 {
-    background-color: forestgreen;
-}
-.p5 {
-    background-color: orange;
-}
-.p6 {
-    background-color: lightseagreen;
-}
-.p7 {
-    background-color: lightsteelblue;
-}
-.p8 {
-    background-color: blanchedalmond;
-}
-.p9 {
-    background-color: coral;
-}
-.p10 {
-    background-color: cornflowerblue;
-}
-.p11 {
-    background-color: maroon;
-}
-.p12 {
-    background-color: saddlebrown;
+header div {
+    width: calc(100vw/6);
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 24pt;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: darkblue;
 }
 
-.wait {
-    background-color: lightgray;
-    color: lightgray;
+#layout {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
 }
 
 .node {
-    border: 1px solid black;
-    height: 3rem;
     display: grid;
     place-items: center;
-    text-transform: uppercase;
+    width: calc(100%-2px);
+    height: calc(100vh/6);
+    background-color: var(--color);
+    color: gold;
+    font-size: 24pt;
+    font-weight: 600;
 }
 
-#process {
-    display: flex;
+.node:hover {
+    cursor: pointer;
+    background-color: darkblue;
 }
 
-header ul {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+.question {
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 46pt;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: darkblue;
+    padding-right: 2rem;
+    text-align: center;
 }
 
-header ul li{
-    list-style: none;
-    margin-bottom: .5rem;
+.question img {
+    width: 30rem;
+    height: auto;
 }
-
-.flex {
-    display: flex;
-    gap: 1rem;
-}
-
-header button {
-    width: 5rem;
-    height: 2rem;
-}
-
-h4 {
-    margin-top: .5rem;
-}
-
-#userInput {
-    width: 20rem;
-}
-
