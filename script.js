@@ -1,43 +1,38 @@
 const questions = [
     "",
-    ["/images/maguire.png", "(1993)"],
-    "Johannes Thingnes Bø on selle spordiala valitseja (Siimu lemmik spordiala, mida vaadata)",
-    "Eesti läänepoolseim linn",
-    "Üks õige veoauto värv",
-    "Tai suurim saar",
-    "IMDb Top 100  #1 film",
-    ["/images/roald.jpg", "(1979)"],
-    "Selle spordiala terminite hulka kuuluvad “side out”, “monster block” ja “pokey”  (Siimu lemmik spordiala, mida harrastada)",
-    ["images/siimpapsiga.jpeg", "Siimu sünnikodu tänav"],
-    "Kunstniku kujutis iseendast",
-    "Saar, kus asub Eesti vanim puithoone",
-    "Seriaal, mis on olnud eetris alates 1993 kuni tänaseni",
-    ["images/mendes.jpg", "(1974)"],
-    "2007nda aasta F1 maailmameister (Siimu lemmik vormelisõitja)",
-    ["images/siim.png", "Pilt on tehtud selles riigis"],
-    "Firma, mis toodab nii veo- kui sõiduautosid ja ka meremootoreid",
-    "Saar, kus 2017 toimusid Saarte mängud",
-    "Kolmeliikmeline komöödiarühmitus, mis alustas tegutsemist 90ndatel raadios",
-    ["images/saras.jpg", "(1976)"],
-    ["images/kilim.png", "Maailma kõrgeim eraldiseisev mägi (Kõrgeim tipp, mille otsa Siim on roninud)"],
-    ["images/vollelaager.png", "vollelaagri riik, kuhu suundutakse ka sel kevadel"],
-    "Nii mitu ratast on enimlevinud poolhaakel",
-    "Freddie Mercury sünnisaar",
-    "1969. aastal valminud film, mille süžee põhineb Eduard Bornhöhe romaanil (Siimu lemmik Eesti film)",
-    ["images/fred.png", "(1993)"],
-    ["images/rannavolle.png", "Rantanen - Talistu duo parim koht Rannavolle suvetuuri etappidel"],
-    "Riik, kus Siim käis arvutimängu Dreamhac võistlustel",
-    "Seade, mida kasutatakse steriliseerimiseks meditsiinivaldkonnas",
-    "Saar, kus sündisid kaksikutest kirjanikud Ülo ja Jüri Tuulik",
-    "2001 valminud dokumentaalne teleuurimus ellujääjatest kohalikes Eesti oludes (Siimu juhendatav fantasy meeskond)"
+    "Sinna TalTechi teaduskonda kuulub Kuressaare kolledž",
+    "Eesti eurolaulu konkursi võitja (Eurovisioonil esines 1996)",
+    "Selles seriaalis näidatakse eestlaste igapäevaelu aastast 1993",
+    "77 päeva on selle talispordi sündmuseni",
+    "Fotosünteesi vedel lähteaine",
+    "Oluline spordirajatis, mis puudub Kuressaarest (Anna arvates)",
+    "Selle Eesti väikelinna haiglas sündis Anna aastal 1995",
+    "Anna ema peab seda ametit",
+    "Selle spordiala jaoks vajalik väljak ehitati esimest korda 1969 Acapulcos",
+    "Fermenteeritud tee",
+    "Keskmiselt on seda nähtust Kuressaares 1900 tundi aastas",
+    "Coolio hitt, mis oli Billboardi aastalõpu edetabelis top 1 singel aastal 1995",
+    "Anna vend viibib hetkel selles poolkinnises asutuses",
+    ["images/justus.jpg", "Saksa laskesuusaäss"],
+    "See kuu möödus nagu pudel veini",
+    "Alates järgmisest suvest saab Kuressaarest lennata sinna pealinna",
+    "1995. aastal ilmunud märul, kus peategelane peab päästma New Yorgi koos Samuel L. Jacksoniga",
+    "Aastal 1905 avaldatud teooria, mis muutis arusaama ajast, ruumist ja liikumisest",
+    ["images/mika.jpg", "Soome kossuäss"],
+    "See valge viinamarjasort on pärit Saksamaalt ja annab veinile hapuka ning õunalise maitse",
+    "Kuressaarele lähim saar",
+    ["images/vahter.jpg", "Too libero on sündinud Annaga samal päeval - 19.11.1995"],
+    "Seisukoht filosoofias, mis peab tõde, tunnetust, väärtusi ja reaalsust sõltuvaks vaatekohast",
+    ["images/smartcrop.jpg", "Eesti edukaim rannavollepaar"],
+    "See kokteil - viskist, suhkrust, bitterist ja apelsinikoorest - pani aluse põgenemisautole",
 ]
 
 const layout = document.getElementById("layout")
 for (i=1;i<6;i++) {
-    for (j=1; j<7; j++) {
+    for (j=1; j<6; j++) {
         const square = document.createElement("div")
         square.classList.add("node")
-        square.id = j + ((i-1)*6)
+        square.id = j + ((i-1)*5)
         square.addEventListener('click', ()=> {
             square.innerText = ""
             const question = document.createElement("div")
